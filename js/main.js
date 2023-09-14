@@ -30,6 +30,9 @@ const ejercicio2 = () => {
   dataE2 = [...dataEjercicio2];
   const areaProductos = document.querySelector(".areaproductos");
   const productElements = dataE2.map((element, index) => {
+
+    const formattedPrice = (element.price - (element.price * element.discountPercentage / 100)).toFixed(2);
+
     return `
       <div id="producto-${index + 10}" class="productCard_block">
       <div class="row">
@@ -99,7 +102,7 @@ const ejercicio2 = () => {
               <div class="row ">
                 <div class="large-6 small-12 column left-align">
                   <div class="block_price">
-                    <p class="block_price__currency">$ ${element.price*(100.00-element.discountPercentage)}</p>
+                    <p class="block_price__currency">$ ${formattedPrice}</p>
                   </div>
 
                 </div>
@@ -113,87 +116,7 @@ const ejercicio2 = () => {
   </div>
     `;
   });
-  let htmlProducto = ` <div  id="producto-10" class="productCard_block">
-    <div class="row">
-      <div class="small-12 large-6 columns">
-        <div class="productCard_leftSide clearfix">              
-          <div class="sliderBlock">
-            <ul class="sliderBlock_items">
-              <li class="sliderBlock_items__itemPhoto sliderBlock_items__showing">
-                <img
-                  src="https://github.com/BlackStar1991/CardProduct/blob/master/app/img/goods/item1/phones1.png?raw=true"
-                  alt="headphones">
-              </li>
-              <li class="sliderBlock_items__itemPhoto">
-                <img
-                  src="https://github.com/BlackStar1991/CardProduct/blob/master/app/img/goods/item1/phones2.png?raw=true"
-                  alt="headphones">
-              </li>
-              <li class="sliderBlock_items__itemPhoto">
-                <img
-                  src="https://github.com/BlackStar1991/CardProduct/blob/master/app/img/goods/item1/phones3.png?raw=true"
-                  alt="headphones">
-              </li>
-              <li class="sliderBlock_items__itemPhoto">
-                <img
-                  src="https://github.com/BlackStar1991/CardProduct/blob/master/app/img/goods/item1/phones4.png?raw=true"
-                  alt="headphones">
-              </li>
-              
-            </ul>
-            <div class="sliderBlock_controls">
-              <div class="sliderBlock_controls__navigatin" style="opacity: 0%;">
-                <div class="sliderBlock_controls__wrapper">
-                  <div class="sliderBlock_controls__arrow sliderBlock_controls__arrowBackward">
-                    <i class="fa fa-angle-left" aria-hidden="true"></i>
-                  </div>
-                  <div class="sliderBlock_controls__arrow sliderBlock_controls__arrowForward">
-                    <i class="fa fa-angle-right" aria-hidden="true"></i>
-                  </div>
-                </div>
-              </div>
 
-              <ul class="sliderBlock_positionControls">
-                <li class="sliderBlock_positionControls__paginatorItem sliderBlock_positionControls__active"></li>
-                <li class="sliderBlock_positionControls__paginatorItem"></li>
-                <li class="sliderBlock_positionControls__paginatorItem"></li>
-                <li class="sliderBlock_positionControls__paginatorItem"></li>
-               
-            </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="small-12 large-6 columns">
-        <div class="productCard_rightSide">
-          <div class="block_product">
-            <h2 class="block_name block_name__mainName">MOMENTUM<sup>&reg; </sup></h2>
-
-            <p class="block_product__advantagesProduct">
-              Wireless headphones with integrated microphone
-            </p>
-
-            <div class="block_informationAboutDevice">
-              <div class="block_rating clearfix">
-                <span class="block_rating__avarage">rating 4.25</span>
-                <span class="block_rating__reviews">(153 disponibles)</span>
-              </div>
-              <div class="row ">
-                <div class="large-6 small-12 column left-align">
-                  <div class="block_price">
-                    <p class="block_price__currency">$499.95</p>
-                  </div>
-
-                </div>
-
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    
-  </div>`;
   
   let dataarray=[...productElements];
   //TODO: colocar en variable dataarray un arreglo de plantillas de producto (htmlProducto)
