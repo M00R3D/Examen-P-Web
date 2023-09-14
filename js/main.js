@@ -21,7 +21,7 @@ const ejercicio1 = () => {
     console.log(a);
     dataE1=a;
   }
-
+ 
 
   procesarEjercicio1(dataE1);
 }
@@ -138,7 +138,16 @@ const ejercicio3 = () => {
 
   if (tipoArticulo == "Todos") {
     //TODO: colocar en variable totalArticulos el total de articulos que existen (stock)
+    let contador=0;
+    totalArticulos=contador;
   } else {
+    let contador=0;
+    let a = dataE3.filter(function(item)
+    {
+      if(item.category==tipoArticulo){contador+=item.stock;}
+      console.log(item.stock);
+      totalArticulos=contador;
+    })
     //TODO: colocar en variable totalArticulos el total de articulos que existen (stock)
     // de la categoria seleccionada por la variable tipoArticulo
   }
