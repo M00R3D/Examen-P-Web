@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="css/estilo.css">
+</head>
+
+<body>
+  <div class="selectorEjericio">
+    <div class="row">
+      <div class="col-4">
+        <select class="form-control" name="ejericio" id="ejercicio">
+          <option value="1">Ejericio 1</option>
+          <option value="2">Ejericio 2</option>
+          <option value="3">Ejericio 3</option>
+        </select>
+      </div>
+    </div>
+
+  </div>
+  <div class="areaEjercicios">
+    <div class="contenedorEjercicio ej1">
+      <div class="alert alert-info" role="alert">
+        Desarrolla un filtrado para la siguiente tabla
+
+      </div>
+      <hr>
+      <div class="row my-4">
+        <div class="col-4">
+          <label for="marca" class="form-label">Marca</label>
+          <select class="form-control" name="marca" id="marca">
+            <option value="Todos">Todos</option>
+            <option value="Acura">Acura</option>
+            <option value="Alfa Romeo">Alfa Romeo</option>
+            <option value="Aston Martin">Aston Martin</option>
+            <option value="Audi">Audi</option>
+            <option value="BMW">BMW</option>
+            <option value="Bentley">Bentley</option>
+            <option value="Buick">Buick</option>
+            <option value="Cadillac">Cadillac</option>
+            <option value="Chevrolet">Chevrolet</option>
+            <option value="Chrysler">Chrysler</option>
+            <option value="Dodge">Dodge</option>
+            <option value="Ferrari">Ferrari</option>
+            <option value="Ford">Ford</option>
+            <option value="GMC">GMC</option>
+            <option value="Holden">Holden</option>
+            <option value="Honda">Honda</option>
+            <option value="Hyundai">Hyundai</option>
+            <option value="Infiniti">Infiniti</option>
+            <option value="Isuzu">Isuzu</option>
+            <option value="Jaguar">Jaguar</option>
+            <option value="Jeep">Jeep</option>
+            <option value="Jensen">Jensen</option>
+            <option value="Kia">Kia</option>
+            <option value="Lamborghini">Lamborghini</option>
+            <option value="Land Rover">Land Rover</option>
+            <option value="Lexus">Lexus</option>
+            <option value="Lincoln">Lincoln</option>
+            <option value="MINI">MINI</option>
+            <option value="Maserati">Maserati</option>
+            <option value="Mazda">Mazda</option>
+            <option value="Mercedes-Benz">Mercedes-Benz</option>
+            <option value="Mercury">Mercury</option>
+            <option value="Mitsubishi">Mitsubishi</option>
+            <option value="Nissan">Nissan</option>
+            <option value="Oldsmobile">Oldsmobile</option>
+            <option value="Peugeot">Peugeot</option>
+            <option value="Plymouth">Plymouth</option>
+            <option value="Pontiac">Pontiac</option>
+            <option value="Porsche">Porsche</option>
+            <option value="Ram">Ram</option>
+            <option value="Saab">Saab</option>
+            <option value="Scion">Scion</option>
+            <option value="Subaru">Subaru</option>
+            <option value="Suzuki">Suzuki</option>
+            <option value="Toyota">Toyota</option>
+            <option value="Volkswagen">Volkswagen</option>
+          </select>
+        </div>
+      </div>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Marca</th>
+            <th scope="col">Modelo</th>
+            <th scope="col">Año</th>
+            <th scope="col">Precio</th>
+          </tr>
+        </thead>
+        <tbody id="bodyTablaAutos">
+
+        </tbody>
+      </table>
+    </div>
+    <div class="contenedorEjercicio ej2 hidden">
+      <div class="alert alert-info" role="alert">
+        Muestra la información de todos los productos en arreglo
+      </div>
+      <hr>
+      <main class="main">
+        <div class="mainWrapper">
+          <div class="mainBackground clearfix">
+            <div class="row">
+              <div class="column small-centered areaproductos">
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </main>
+
+    </div>
+    <div class="contenedorEjercicio ej3 hidden p-3">
+      <div class="alert alert-info" role="alert">
+        Cuenta la cantidad de productos por categoria
+
+      </div>
+      <hr>
+      <div class="row row-cols-1 row-cols-md-3 mb-3 text-center mb-4">
+        <div class="col">
+          <div class="card mb-4 rounded-3 shadow-sm">
+            <div class="card-header py-3">
+              <h4 class="my-0 fw-normal">Inventario</h4>
+            </div>
+            <div class="card-body">
+              <select class="form-control" id="tipoArticulo">
+                <option value="Todos">Todos</option>
+                <option value="home-decoration">home-decoration</option>
+                <option value="laptops">laptops</option>
+                <option value="smartphones">smartphones</option>
+                <option value="fragrances">fragrances</option>
+                <option value="skincare">skincare</option>
+                <option value="groceries">groceries</option>
+              </select>
+              <h1 class="card-title pricing-card-title" id="totalArtiulos">X</h1>
+
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+
+    </div>
+  </div>
+
+  <div id="jsoneditor" style="width: 400px; height: 400px;"></div>
+
+  <script>
+    // create the editor
+    /*const container = document.getElementById("jsoneditor")
+    const options = {mode: 'view'}
+    const editor = new JSONEditor(container, options)
+
+    // set json
+    const initialJson = {
+        "data": [1, 2, 3],
+        "Boolean": true,
+        "Null": null,
+        "Number": 123,
+        "Object": {"a": "b", "c": "d"},
+        "String": "Hello World"
+    }
+    editor.set(initialJson)
+
+    // get json
+    const updatedJson = editor.get() */
+  </script>
+  <script src="js/arreglos.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>
